@@ -1,39 +1,22 @@
 import 'package:mars_rover/command.dart';
-import 'package:mars_rover/mars.dart';
+import 'package:mars_rover/move_east.dart';
+import 'package:mars_rover/move_north.dart';
+import 'package:mars_rover/move_south.dart';
+import 'package:mars_rover/move_strategy.dart';
+import 'package:mars_rover/move_west.dart';
 import 'package:mars_rover/position.dart';
 
 class MoveOnePositionBackwardCommand implements Command {
+  Map<String, MoveStrategy> moves = {
+    'S': MoveSouth(),
+    'N': MoveNorth(),
+    'W': MoveWest(),
+    'E': MoveEast(),
+  };
+
   @override
-  Position moveOne({required Position position, required String direction}) {
-    switch (direction) {
-      case 'N':
-        if (position.y == 0) {
-          return Position(x: position.x, y: Mars.planetEdgeY);
-        }
-        return Position(x: position.x, y: position.y - 1);
-
-      case 'S':
-        if (position.y == Mars.planetEdgeY) {
-          return Position(x: position.x, y: 0);
-        }
-        return Position(x: position.x, y: position.y + 1);
-
-      case 'E':
-        if (position.x == 0) {
-          return Position(x: Mars.planetEdgeX, y: position.y);
-        }
-        return Position(x: position.x - 1, y: position.y);
-
-      case 'W':
-        if (position.x == Mars.planetEdgeX) {
-          return Position(x: 0, y: position.y);
-        }
-        return Position(x: position.x + 1, y: position.y);
-
-      default:
-        return Position(x: position.x, y: position.y);
-    }
-  }
+  Position moveOne({required Position position, required String direction}) =>
+      moves[direction]!.move(position: position);
 
   @override
   String turnDirection({required String direction}) => direction;

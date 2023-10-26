@@ -14,6 +14,9 @@ class MarsRover {
   int? currentY;
   int? currentX;
   String? currentDirection;
+  int planetEdgeX = 10;
+  int planetEdgeY = 10;
+
   void reciveCommands(String commands) {
     for (var i = 0; i < commands.length; i++) {
       if (commands[i] == 'f') {
@@ -32,15 +35,31 @@ class MarsRover {
     Position position;
     switch (direction) {
       case 'N':
+        if (y == planetEdgeY) {
+          position = Position(x: x, y: 0);
+          break;
+        }
         position = Position(x: x, y: y + 1);
         break;
       case 'S':
+        if (y == 0) {
+          position = Position(x: x, y: planetEdgeY);
+          break;
+        }
         position = Position(x: x, y: y - 1);
         break;
       case 'E':
+        if (x == planetEdgeX) {
+          position = Position(x: 0, y: y);
+          break;
+        }
         position = Position(x: x + 1, y: y);
         break;
       case 'W':
+        if (x == 0) {
+          position = Position(x: planetEdgeX, y: y);
+          break;
+        }
         position = Position(x: x - 1, y: y);
         break;
       default:
@@ -55,15 +74,31 @@ class MarsRover {
     Position position;
     switch (direction) {
       case 'N':
+        if (y == 0) {
+          position = Position(x: x, y: planetEdgeY);
+          break;
+        }
         position = Position(x: x, y: y - 1);
         break;
       case 'S':
+        if (y == planetEdgeY) {
+          position = Position(x: x, y: 0);
+          break;
+        }
         position = Position(x: x, y: y + 1);
         break;
       case 'E':
+        if (x == 0) {
+          position = Position(x: planetEdgeX, y: y);
+          break;
+        }
         position = Position(x: x - 1, y: y);
         break;
       case 'W':
+        if (x == planetEdgeX) {
+          position = Position(x: 0, y: y);
+          break;
+        }
         position = Position(x: x + 1, y: y);
         break;
       default:

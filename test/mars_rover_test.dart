@@ -83,6 +83,38 @@ void main() {
     expect(currentDirection, matcherDirection);
   });
 
+  test('turnTheRoverLeft if direction is W', () {
+    final marsRover = MarsRover(x: 0, y: 0, direction: 'W');
+
+    marsRover.reciveCommands('l');
+
+    final currentDirection = marsRover.currentDirection;
+    final matcherDirection = 'S';
+
+    expect(currentDirection, matcherDirection);
+  });
+
+  test('turnTheRoverLeft if direction is S', () {
+    final marsRover = MarsRover(x: 0, y: 0, direction: 'S');
+
+    marsRover.reciveCommands('l');
+
+    final currentDirection = marsRover.currentDirection;
+    final matcherDirection = 'E';
+
+    expect(currentDirection, matcherDirection);
+  });
+  test('turnTheRoverLeft if direction is E', () {
+    final marsRover = MarsRover(x: 0, y: 0, direction: 'E');
+
+    marsRover.reciveCommands('l');
+
+    final currentDirection = marsRover.currentDirection;
+    final matcherDirection = 'N';
+
+    expect(currentDirection, matcherDirection);
+  });
+
   test('turnTheRoverRight if direction is N', () {
     final marsRover = MarsRover(x: 0, y: 0, direction: 'N');
 
@@ -90,6 +122,39 @@ void main() {
 
     final currentDirection = marsRover.currentDirection;
     final matcherDirection = 'E';
+
+    expect(currentDirection, matcherDirection);
+  });
+
+  test('turnTheRoverRight if direction is E', () {
+    final marsRover = MarsRover(x: 0, y: 0, direction: 'E');
+
+    marsRover.reciveCommands('r');
+
+    final currentDirection = marsRover.currentDirection;
+    final matcherDirection = 'S';
+
+    expect(currentDirection, matcherDirection);
+  });
+
+  test('turnTheRoverRight if direction is S', () {
+    final marsRover = MarsRover(x: 0, y: 0, direction: 'S');
+
+    marsRover.reciveCommands('r');
+
+    final currentDirection = marsRover.currentDirection;
+    final matcherDirection = 'W';
+
+    expect(currentDirection, matcherDirection);
+  });
+
+  test('turnTheRoverRight if direction is W', () {
+    final marsRover = MarsRover(x: 0, y: 0, direction: 'W');
+
+    marsRover.reciveCommands('r');
+
+    final currentDirection = marsRover.currentDirection;
+    final matcherDirection = 'N';
 
     expect(currentDirection, matcherDirection);
   });

@@ -306,4 +306,24 @@ void main() {
 
     expect(currentX, matcherX);
   });
+  test(
+      'Should return 0 when x:planetEdgeX and move fordward and direction is E',
+      () {
+    final marsRover = MarsRover(x: planetEdgeX, y: 0, direction: 'E');
+
+    marsRover.reciveCommands('fflbrffl');
+
+    final currentX = marsRover.currentX;
+    final matcherX = 3;
+
+    final currentY = marsRover.currentY;
+    final matcherY = 10;
+
+    final currentDirection = marsRover.currentDirection;
+    final directionMarcher = 'N';
+
+    expect(currentX, matcherX);
+    expect(currentY, matcherY);
+    expect(currentDirection, directionMarcher);
+  });
 }

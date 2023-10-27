@@ -1,6 +1,6 @@
 import 'package:mars_rover/commands/command.dart';
-import 'package:mars_rover/mars.dart';
-import 'package:mars_rover/position.dart';
+import 'package:mars_rover/models/mars.dart';
+import 'package:mars_rover/models/position.dart';
 
 class MoveOnePositionFordwardCommand implements Command {
   // TODO

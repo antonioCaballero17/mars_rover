@@ -3,8 +3,8 @@ import 'package:mars_rover/commands/move_one_position_backguard_command.dart';
 import 'package:mars_rover/commands/move_one_position_fordward_command.dart';
 import 'package:mars_rover/commands/turn_left_command.dart';
 import 'package:mars_rover/commands/turn_right_command.dart';
-import 'package:mars_rover/mars.dart';
-import 'package:mars_rover/position.dart';
+import 'package:mars_rover/models/mars.dart';
+import 'package:mars_rover/models/position.dart';
 
 class MarsRover {
   final int x;

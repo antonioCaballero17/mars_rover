@@ -1,5 +1,5 @@
-import 'package:mars_rover/mars.dart';
-import 'package:mars_rover/position.dart';
+import 'package:mars_rover/models/mars.dart';
+import 'package:mars_rover/models/position.dart';
 import 'package:mars_rover/strategies/move_strategy.dart';
 
 class MoveEast implements MoveStrategy {

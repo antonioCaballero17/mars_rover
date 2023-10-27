@@ -1,5 +1,5 @@
 import 'package:mars_rover/commands/command.dart';
-import 'package:mars_rover/position.dart';
+import 'package:mars_rover/models/position.dart';
 import 'package:mars_rover/strategies/move_east.dart';
 import 'package:mars_rover/strategies/move_north.dart';
 import 'package:mars_rover/strategies/move_south.dart';

@@ -1,4 +1,5 @@
 import 'package:mars_rover/commands/command.dart';
+import 'package:mars_rover/direction.dart';
 import 'package:mars_rover/models/position.dart';
 import 'package:mars_rover/strategies/move_east.dart';
 import 'package:mars_rover/strategies/move_north.dart';
@@ -19,5 +20,5 @@ class MoveOnePositionFordwardCommand implements Command {
       moves[direction]!.move(position: position);
 
   @override
-  String turnDirection({required String direction}) => direction;
+  Direction turnDirection({required Direction direction}) => direction;
 }

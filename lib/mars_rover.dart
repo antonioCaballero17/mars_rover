@@ -3,8 +3,13 @@ import 'package:mars_rover/commands/move_one_position_backguard_command.dart';
 import 'package:mars_rover/commands/move_one_position_fordward_command.dart';
 import 'package:mars_rover/commands/turn_left_command.dart';
 import 'package:mars_rover/commands/turn_right_command.dart';
+import 'package:mars_rover/direction.dart';
+import 'package:mars_rover/east.dart';
 import 'package:mars_rover/models/mars.dart';
 import 'package:mars_rover/models/position.dart';
+import 'package:mars_rover/north.dart';
+import 'package:mars_rover/sourh.dart';
+import 'package:mars_rover/west.dart';
 
 class MarsRover {
   final int x;
@@ -47,7 +52,17 @@ class MarsRover {
       currentX = newPosition.x;
       currentY = newPosition.y;
 
-      currentDirection = command.turnDirection(direction: currentDirection);
+      Map<String, Direction> directions = {
+        'N': North(),
+        'S': South(),
+        'E': East(),
+        'W': West(),
+      };
+
+      currentDirection = command
+          .turnDirection(
+              direction: directions[currentDirection] ?? North()) // TODO
+          .toString();
     }
   }
 }

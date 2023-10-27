@@ -1,10 +1,10 @@
-import 'package:mars_rover/command.dart';
+import 'package:mars_rover/commands/command.dart';
+import 'package:mars_rover/commands/move_one_position_backguard_command.dart';
+import 'package:mars_rover/commands/move_one_position_fordward_command.dart';
+import 'package:mars_rover/commands/turn_left_command.dart';
+import 'package:mars_rover/commands/turn_right_command.dart';
 import 'package:mars_rover/mars.dart';
-import 'package:mars_rover/move_one_position_backguard_command.dart';
-import 'package:mars_rover/move_one_position_fordward_command.dart';
 import 'package:mars_rover/position.dart';
-import 'package:mars_rover/turn_left_command.dart';
-import 'package:mars_rover/turn_right_command.dart';
 
 class MarsRover {
   final int x;

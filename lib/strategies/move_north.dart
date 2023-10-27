@@ -1,8 +1,8 @@
 import 'package:mars_rover/mars.dart';
-import 'package:mars_rover/move_strategy.dart';
 import 'package:mars_rover/position.dart';
+import 'package:mars_rover/strategies/move_strategy.dart';
 
-class MoveSouth implements MoveStrategy {
+class MoveNorth implements MoveStrategy {
   var steeps = 1;
 
   @override

@@ -1,4 +1,4 @@
-import 'package:mars_rover/command.dart';
+import 'package:mars_rover/commands/command.dart';
 import 'package:mars_rover/mars.dart';
 import 'package:mars_rover/position.dart';
 

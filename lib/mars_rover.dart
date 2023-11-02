@@ -40,29 +40,33 @@ class MarsRover {
     'r': TurnRightCommand(),
   };
 
+  Map<String, Direction> directions = {
+    'N': North(),
+    'S': South(),
+    'E': East(),
+    'W': West(),
+  };
+
   void reciveCommands(String commands) {
-    late Command command;
-    for (var i = 0; i < commands.length; i++) {
-      command = commandsMap[commands[i]]!;
+    if (directions.containsKey('N') ||
+        directions.containsKey('S') ||
+        directions.containsKey('E') ||
+        directions.containsKey('W')) {
+      late Command command;
+      for (var i = 0; i < commands.length; i++) {
+        command = commandsMap[commands[i]]!;
 
-      final Position newPosition = command.moveOne(
-        position: Position(x: currentX, y: currentY),
-        direction: currentDirection,
-      );
-      currentX = newPosition.x;
-      currentY = newPosition.y;
+        final Position newPosition = command.moveOne(
+          position: Position(x: currentX, y: currentY),
+          direction: currentDirection,
+        );
+        currentX = newPosition.x;
+        currentY = newPosition.y;
 
-      Map<String, Direction> directions = {
-        'N': North(),
-        'S': South(),
-        'E': East(),
-        'W': West(),
-      };
-
-      currentDirection = command
-          .turnDirection(
-              direction: directions[currentDirection] ?? North()) // TODO
-          .toString();
+        currentDirection = command
+            .turnDirection(direction: directions[currentDirection]!)
+            .toString();
+      }
     }
   }
 }
